@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. HNL</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .club-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .club-img-container {
+            position: relative;
+            width: 360px;
+            height: 360px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        .club-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .club-img-container:hover {
+            transform: rotateY(180deg); /* Okretanje slike sa lijeva na desno */
+        }
+
+        .club-hover-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);  /* Crna pozadina */
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0; /* Skriveno u početku */
+            visibility: hidden;
+            transform: rotateY(180deg); /* Tekst se pojavljuje na okrenutoj strani */
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .club-img-container:hover .club-hover-text {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background-color: #005fa3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Dodavanje razmaka između teksta i slike */
+        nav {
+            background-color: #002244;
+            padding: 10px 0;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin: 0 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="igraci.html">Igrači</a></li>
+            <li><a href="rezultati.html">Rezultati</a></li>
+            <li><a href="statistike.html">Statistike</a></li>
+            <li><a href="oliga.html">O Ligi</a></li>
+        </ul>
+    </nav>
+<header>
+    <h1>1. Hrvatska nogometna liga</h1>
+</header>
+
+
+<main>
+    <h2>Tablica HNL-a</h2>
+    <select id="seasonSelect" onchange="redirectToSeasonPage()">
+        <option value="" disabled selected>Odaberite sezonu...</option>
+        <option value="2020-2021">Sezona 2020/2021</option>
+        <option value="2021-2022">Sezona 2021/2022</option>
+        <option value="2022-2023">Sezona 2022/2023</option>
+        <option value="2023-2024">Sezona 2023/2024</option>
+        <option value="2024-2025">Sezona 2024/2025</option>
+        <option value="2025-2026">Sezona 2025/2026</option>
+    </select>
+
+    
+    
+      
+    <div class="club-container">
+        <div class="club-img-container">
+            <img src="images/dinamo_pocetna.png" alt="Dinamo Grb">
+            <div class="club-hover-text">
+                Dinamo Zagreb<br>
+                Godina osnutka: 1945.<br>
+                Grad: Zagreb<br>
+                Stadion:Maksimir<br>
+                Naslovi: 22 HNL, 15 Kupa Hrvatske<br>
+                Navijačka skupina: Bad Blue Boys<br>
+                <img src="images/dinamo.png" alt="Dinamo Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/rijeka_pocetna.png" alt="Rijeka Grb">
+            <div class="club-hover-text">
+                Rijeka<br>
+                Godina osnutka: 1906.<br>
+                Grad: Rijeka<br>
+                Stadion: Rujevica<br>
+                Naslovi: 6 HNL, 1 Kupa Hrvatske<br>
+                Navijačka skupina: Armada<br>
+                <img src="images/rijeka.png" alt="Rijeka Grb">
+            </div>
+        </div>
+
+        <div class="club-img-container">
+            <img src="images/osijek_pocetna.png" alt="Osijek Grb">
+            <div class="club-hover-text">
+                Osijek<br>
+                Godina osnutka: 1947.<br>
+                Grad: Osijek<br>
+                Stadion: Opus Arena<br>
+                Naslovi: 1 puta pobjednik Kupa Hrvatske<br>
+                Navijačka skupina: Kohorta<br>
+                <img src="images/osijek.png" alt="Osijek Grb">
+            </div>
+        </div>
+
+        <div class="club-img-container">
+            <img src="images/hajduk_pocetna.png" alt="Hajduk Grb">
+            <div class="club-hover-text">
+                Hajduk<br>
+                Godina osnutka: 1911.<br>
+                Grad: Split<br>
+                Stadion: Poljud<br>
+                Naslovi: 6 HNL, 8 puta pobjednik Kupa Hrvatske<br>
+                Navijačka skupina: Torcida<br>
+                <img src="images/hajduk.png" alt="Hajduk Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/lokomotiva_pocetna.png" alt="Lokomotiva Grb">
+            <div class="club-hover-text">
+                Lokomotiva<br>
+                Godina osnutka: 1914.<br>
+                Grad: Zagreb<br>
+                Stadion: Kranjčevićeva<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: Lokosi<br>
+                <img src="images/lokomotiva.png" alt="Lokomotiva Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/gorica_pocetna.png" alt="Gorica Grb">
+            <div class="club-hover-text">
+                Gorica<br>
+                Godina osnutka: 2009.<br>
+                Grad: Zagreb<br>
+                Stadion: Gradski stadion Velika Gorica<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: Šljakeri i Good Boysi<br>
+                <img src="images/gorica.png" alt="Gorica Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/istra_pocetna.png" alt="Istra Grb">
+            <div class="club-hover-text">
+                Istra<br>
+                Godina osnutka: 1961.<br>
+                Grad: Pula<br>
+                Stadion: Aldo Drosina<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: Demoni Pula<br>
+                <img src="images/istra.png" alt="Istra Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/sibenik_pocetna.png" alt="Vukovar Grb">
+            <div class="club-hover-text">
+                Šibenik<br>
+                Godina osnutka: 1932.<br>
+                Grad: Šibenik<br>
+                Stadion: Šubićevac<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: Šibenski Funcuti<br>
+                <img src="images/sibenik.png" alt="Šibenik Grb">
+            </div>
+        </div>
+
+        <div class="club-img-container">
+            <img src="images/varazdin_pocetna.png" alt="Varaždin Grb">
+            <div class="club-hover-text">
+                Varaždin<br>
+                Godina osnutka: 1931.<br>
+                Grad: Varaždin<br>
+                Stadion: Stadion Varteks<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: White Stones<br>
+                <img src="images/varazdin.png" alt="Varaždin Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/rudes_pocetna.png" alt="Rudeš Grb">
+            <div class="club-hover-text">
+                Rudeš<br>
+                Godina osnutka: 20.st<br>
+                Grad: Zagreb<br>
+                Stadion: Stadion Rudeš<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: RudešBoys<br>
+                <img src="images/rudes.png" alt="Rudeš Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/hr.dragovoljac_pocetna.png" alt="Hr. Dragovoljac Grb">
+            <div class="club-hover-text">
+                Hr. Dragovoljac<br>
+                Godina osnutka: 1975.<br>
+                Grad: Zagreb<br>
+                Stadion: Stadion NŠC Stjepan Spajić<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: Crni ratnici<br>
+                <img src="images/hr.dragovoljac.png" alt="Hr. Dragovoljac Grb">
+            </div>
+        </div>
+
+
+        <div class="club-img-container">
+            <img src="images/slaven_pocetna.png" alt="Slaven Grb">
+            <div class="club-hover-text">
+                Slaven<br>
+                Godina osnutka: 1912.<br>
+                Grad: Koprivnica<br>
+                Stadion: Stadion Ivan Kušek Apaš<br>
+                Naslovi: Nema naslova<br>
+                Navijačka skupina: Podravske Štuke<br>
+                <img src="images/slaven.png" alt="Slaven Grb">
+            </div>
+        </div>
+
+        <div class="club-container">
+            <div class="club-img-container">
+                <img src="images/vukovar_pocetna.png" alt="HNK Vukovar 1991 Grb">
+                <div class="club-hover-text">
+                    HNK Vukovar 1991<br>
+                    Godina osnutka: 1991.<br>
+                    Grad: Vukovar<br>
+                    Stadion: Borovo Naselje<br>
+                    Naslovi: Nema naslova <br>
+                    <img src="images/vukovar.png" alt="HNK Vukovar 1991 Grb">
+                </div>
+            </div>
+        </div>
+</main>
+
+<script>
+    function redirectToSeasonPage() {
+        var selectedSeason = document.getElementById('seasonSelect').value;
+        window.location.href = selectedSeason + '.html';  // Preusmjeravanje na stranicu za odabranu sezonu
+    }
+</script>
+
+</body>
+</html>

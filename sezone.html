@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igrači</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #002244;
+            padding: 10px 0;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin: 0 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        .nav-links a svg {
+            margin-right: 5px;
+        }
+        .nav-links a.active {
+            background-color: #005fa3;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .player {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 700px;
+            text-align: left;
+            display: flex;
+            gap: 20px;
+        }
+        .player img {
+            width: 120px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .player-info h3 {
+            margin: 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <ul class="nav-links">
+        <li><a href="zavrsni.html"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30" fill="white"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a></li>
+        <li><a href="rezultati.html">Rezultati</a></li>
+        <li><a href="statistike.html">Statistike</a></li>
+        <li><a href="oliga.html">O Ligi</a></li>
+        <li><a href="igraci.html" class="active">Igrači</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h1>Poznati Igrači HNL-a</h1>
+
+<!-- Igrači -->
+<!-- Početak -->
+<!-- Svaki blok koristi sliku iz "images/igraci/ime_prezime.jpg" -->
+
+<script>
+    const igraci = [
+        ["Stanko Bubalo", "Osijek (bivši)", "300k €", "Igrao u HNL-u i Austriji"],
+        ["Jakov Surać", "Zadar (bivši)", "250k €", "Najviše nastupa u HNL-u"],
+        ["Mladen Bartolović", "Cibalia (bivši)", "300k €", "Bosanskohercegovački reprezentativac"],
+        ["Hrvoje Štrok", "Dinamo, Zagreb", "750k €", "Zapažene igre u Dinamu"],
+        ["Nikola Šafarić", "Varteks", "850k €", "Legendarni igrač Varteksa"],
+        ["Jasmin Agić", "Dinamo", "500k €", "Reprezentativac Hrvatske"],
+        ["Zvonimir Deranja", "Hajduk", "900k €", "Zapaženi nastupi u Hajduku"],
+        ["Kruno Lovrek", "Zagreb", "400k €", "Igrao i u Koreji i Australiji"],
+        ["Veldin Karić", "Varteks", "500k €", "Poznat po škaricama i golovima"],
+        ["Kristijan Polovanec", "Dinamo", "550k €", "Defenzivac iz zlatnog razdoblja"],
+        ["Vanja Iveša", "Istra", "1.4 mil. €", "Jedan od najviših golmana"],
+        ["Bojan Vručina", "Slaven Belupo", "350k €", "Najbolji strijelac Belupa"],
+        ["Jozo Gašpar", "Hajduk", "400k €", "Legendarni veznjak"],
+        ["Ivo Ergović", "Osijek", "450k €", "Dugogodišnji kapetan"],
+        ["Dean Računica", "Hajduk", "300k €", "Tehničar i lider"],
+        ["Marijo Dodik", "Međimurje", "350k €", "Napadač s iskustvom"],
+        ["Nermin Šabić", "Osijek", "150k €", "Reprezentativac BiH"],
+        ["Bakir Beširević", "Osijek", "200k €", "Snažan veznjak"],
+        ["Igor Musa", "Zagreb", "350k €", "Igrao i u Njemačkoj"],
+        ["Krunoslav Rendulić", "Rijeka", "250k €", "Kasnije postao trener"],
+        ["Željko Malčić", "Zadar", "800k €", "Napadač iz HNL-a"],
+        ["Davor Vugrinec", "Varteks, Dinamo", "600k €", "Najbolji strijelac HNL-a"],
+        ["Luka Modrić", "Real Madrid", "55 mil. €", "Zlatna lopta 2018, Liga prvaka x5"],
+        ["Mateo Kovačić", "Manchester City", "45 mil. €", "Liga prvaka s 2 kluba"],
+        ["Joško Gvardiol", "Manchester City", "80 mil. €", "Top mladi stoper svijeta"],
+        ["Ivan Rakitić", "Al Shabab", "70 mil. €", "Finalist SP 2018"]
+    ];
+
+    let html = "";
+    igraci.forEach(([ime, klub, placa, nagrade]) => {
+        const imgPath = `images/igraci/${ime.toLowerCase().replace(/ /g, "_").replace(/[\u0107\u0161\u017e\u010d\u0111]/g, c => ({
+            'ć': 'c', 'š': 's', 'ž': 'z', 'č': 'c', 'đ': 'dj'
+        }[c] || c))}.jpg`;
+        html += `
+        <div class="player">
+            <img src="${imgPath}" alt="${ime}">
+            <div class="player-info">
+                <h3>${ime}</h3>
+                <p><strong>Klub:</strong> ${klub}</p>
+                <p><strong>Plaća:</strong> ${placa}</p>
+                <p><strong>Nagrade:</strong> ${nagrade}</p>
+            </div>
+        </div>
+        `;
+    });
+
+    document.write(html);
+</script>
+
+</main>
+
+</body>
+</html>

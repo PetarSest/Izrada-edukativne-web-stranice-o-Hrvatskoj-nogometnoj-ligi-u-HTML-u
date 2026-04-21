@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Statistike - 1. HNL</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #002244;
+            padding: 10px 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 0 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s;
+            
+        }
+
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+
+        .nav-links a svg {
+            margin-right: 5px;
+        }
+
+        .nav-links a.active {
+            background-color: #005fa3;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #005baa;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-left: 20px;
+            padding-left: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #005baa;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        @media (max-width: 600px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            main {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li>
+                <a href="zavrsni.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24" width="30" fill="white" style="vertical-align: middle;">
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    </svg>
+                </a>
+            </li>
+            <li><a href="igraci.html">Igrači</a></li>
+            <li><a href="rezultati.html">Rezultati</a></li>
+            <li><a href="statistike.html" class="active">Statistike</a></li>
+            <li><a href="oliga.html">O Ligi</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Statistike - 1. HNL</h1>
+        <p>Statistika je ključna za razumijevanje uspjeha klubova, igrača i samog natjecanja. U nastavku se nalaze najvažniji statistički pregledi vezani za Prvu Hrvatsku Nogometnu Ligu. Podaci uključuju broj osvojenih titula, najboljih strijelaca, asistente, broj utakmica i još mnogo toga.</p>
+
+        <h2>Najuspješniji klubovi svih vremena</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Klub</th>
+                    <th>Naslova prvaka</th>
+                    <th>Ukupno sezona</th>
+                    <th>Najbolji plasman</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GNK Dinamo Zagreb</td>
+                    <td>24</td>
+                    <td>32</td>
+                    <td>1. mjesto</td>
+                </tr>
+                <tr>
+                    <td>HNK Hajduk Split</td>
+                    <td>6</td>
+                    <td>32</td>
+                    <td>1. mjesto</td>
+                </tr>
+                <tr>
+                    <td>HNK Rijeka</td>
+                    <td>2</td>
+                    <td>32</td>
+                    <td>1. mjesto</td>
+                </tr>
+                <tr>
+                    <td>NK Osijek</td>
+                    <td>0</td>
+                    <td>30+</td>
+                    <td>2. mjesto</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Najbolji strijelci svih vremena</h2>
+        <ul>
+            <li><strong>Davor Vugrinec</strong> – 146 pogodaka</li>
+            <li><strong>Igor Cvitanović</strong> – 126 pogodaka</li>
+            <li><strong>Joško Popović</strong> – 111 pogodaka</li>
+            <li><strong>Eduardo da Silva</strong> – 73 pogotka u samo nekoliko sezona</li>
+        </ul>
+
+        <h2>Najbolji asistenti i igrači s najviše nastupa</h2>
+        <p>Statistika asistencija i nastupa pokazuje igrače koji su tijekom godina bili ključni u kreiranju igre i konstantni članovi prvih postava:</p>
+        <ul>
+            <li><strong>Tomislav Erceg</strong> – više sezona s dvoznamenkastim brojem asistencija</li>
+            <li><strong>Kristijan Ipša</strong> – jedan od igrača s najviše nastupa u povijesti lige</li>
+        </ul>
+
+        <h2>Zanimljivosti iz statistike</h2>
+        <ul>
+            <li>Najveća pobjeda: Dinamo Zagreb 10:0 protiv NK Zagreb</li>
+            <li>Najduži niz bez poraza: Dinamo Zagreb – 45 utakmica</li>
+            <li>Najviše gledatelja na jednoj utakmici: više od 35.000 gledatelja – Hajduk vs. Dinamo</li>
+            <li>Najviše crvenih kartona u jednoj sezoni: 8 – određeni obrambeni igrači kroz karijeru</li>
+        </ul>
+
+        <h2>Zaključak</h2>
+        <p>Statistički podaci daju širu sliku o razvoju hrvatskog nogometa. Zahvaljujući izvrsnim individualnim i kolektivnim ostvarenjima, 1. HNL se sve više pozicionira kao kvalitetna europska liga. Klubovi ulažu u analitiku, a podatci se koriste za scouting, pripremu utakmica i naprednu taktiku.</p>
+    </main>
+
+</body>
+</html>
